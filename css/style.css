@@ -51,7 +51,6 @@ h1 {
 @media (min-width: 620px) {
 	body {
 		background: url("../img/gradient-ipad.jpg") center no-repeat;
-		background-size: cover;
 	}
 }
 

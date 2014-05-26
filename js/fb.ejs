@@ -1,6 +1,8 @@
 <% for(var i=1; i<5; i++) { %>
 	<div class="facebook">
 	<p><%= i %> Testing</p>
-	<span></span>
+	<% if (data[i].message) { %>
+		<span>data[i].message</span>
+	<% } %>
 	</div>
 <% } %>
