@@ -20,7 +20,7 @@
 							/* handle the result */
 	
 							var feed = response.data;
-							console.log(feed);
+							// console.log(feed);
 							var html = new EJS({url: 'js/fb.ejs'}).render(feed);
 							$(html).appendTo($("div.container"));
 						}
