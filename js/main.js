@@ -13,7 +13,6 @@
 			FB.login(function(response) {
 				console.log("fb ready");
 
-				var response = (function () {
 					FB.api(
 					"/v2.0/me/feed/",
 					function (response) {
@@ -22,13 +21,11 @@
 	
 							var feed = response;
 							console.log(feed);
-							return feed;
+							var html = new EJS({url: 'js/fb.ejs'}).render(feed);
+							$(html).appendTo($("div.container"));
 						}
 					});
-				})();
 
-				var html = new EJS({url: 'js/fb.ejs'}).render(response);
-				$(html).appendTo($("div.container"));
 				
 			}, {scope: "read_stream"});
 			
