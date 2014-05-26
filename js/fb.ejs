@@ -1,5 +1,6 @@
 <% for(var i=1; i<5; i++) { %>
 	<div class="facebook">
-	<span><%= i %> Testing</span>
+	<span>Date: <%= response.data[i].create-time %></span>
+	<p><%= response.data[i].message %></p>
 	</div>
 <% } %>
