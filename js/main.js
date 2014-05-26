@@ -13,7 +13,7 @@
 			FB.login(function(response) {
 				console.log("fb ready");
 				FB.api(
-				"/v2.0/me",
+				"/v2.0/me/feed/",
 				function (response) {
 					if (response && !response.error) {
 						/* handle the result */
