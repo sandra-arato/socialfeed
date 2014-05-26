@@ -24,8 +24,10 @@
 			FB.login(function(response) {
 				console.log("fb ready");
 			}, {scope: "read_stream"});
-			var html = new EJS({url: '../js/fb.ejs'}).render(getPosts());
-			$(html).appendTo($("div.container"));
+			
 		};
 	};
+
+	var html = new EJS({url: '../js/fb.ejs'}).render(getPosts());
+			$(html).appendTo($("div.container"));
 })(jQuery);
