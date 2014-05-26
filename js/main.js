@@ -19,7 +19,7 @@
 						if (response && !response.error) {
 							/* handle the result */
 	
-							var feed = response;
+							var feed = response.data;
 							console.log(feed);
 							var html = new EJS({url: 'js/fb.ejs'}).render(feed);
 							$(html).appendTo($("div.container"));
