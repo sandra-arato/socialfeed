@@ -17,7 +17,8 @@
 							"/v2.0/me/feed/",
 							function (response) {
 								if (response && !response.error) {
-									return response;
+									alert response.data[1];
+									return response.data[1];
 								}
 							});
 					})();
