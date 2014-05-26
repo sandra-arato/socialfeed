@@ -1,5 +1,4 @@
 (function($){
-	var feed;
 	window.fbAsyncInit = function() {
 		FB.init({
 		appId	: '324540777693543',
