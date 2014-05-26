@@ -19,10 +19,8 @@
 						if (response && !response.error) {
 							/* handle the result */
 	
-							var feed = response.data;
-							// console.log(feed);
-							var html = new EJS({url: 'js/fb.ejs'}).render(feed);
-							$(html).appendTo($("div.container"));
+							var feed = response;
+							return feed;
 						}
 					});
 
@@ -30,6 +28,14 @@
 			}, {scope: "read_stream"});
 			
 		};
+
+		if (feed) {
+			var html = new EJS({url: 'js/fb.ejs'}).render(feed);
+							$(html).appendTo($("div.container"));
+		}
+		else {
+			console.log("Try again");
+		}
 	};
 
 	
