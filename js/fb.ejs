@@ -1,10 +1,7 @@
 
-<% include feed %>
-<% for(var i=1; i<feed.length; i++) { %>
+<% for(var i=0; i<20; i++) { %>
 	<div class="facebook">
 	<p><%= i %> Testing</p>
-	<% if (feed[i].message) { %>
 		<span>feed[i].message</span>
-	<% } %>
 	</div>
 <% } %>
