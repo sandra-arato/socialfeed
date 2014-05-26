@@ -1,4 +1,4 @@
 socialfeed
 ==========
 
-Mini project to share social fields publicly
+Mini project to share social feeds publicly
