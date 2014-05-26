@@ -17,7 +17,7 @@
 				function (response) {
 					if (response && !response.error) {
 						/* handle the result */
-						console.log("sg");
+						console.log(response);
 					}
 				});
 			}, {scope: "read_stream"});
