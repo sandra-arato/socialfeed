@@ -18,7 +18,9 @@
 					if (response && !response.error) {
 						/* handle the result */
 						console.log(response);
-						var html = new EJS({url: 'js/fb.ejs'}).render(response);
+						var feed = response;
+						console.log(feed);
+						var html = new EJS({url: 'js/fb.ejs'}).render(feed);
 						$(html).appendTo($("div.container"));
 					}
 				});
