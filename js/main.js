@@ -1,5 +1,5 @@
 (function($){
-
+	var feed;
 	window.fbAsyncInit = function() {
 		FB.init({
 		appId	: '324540777693543',
@@ -13,16 +13,20 @@
 			FB.login(function(response) {
 				console.log("fb ready");
 
-					FB.api(
-					"/v2.0/me/feed/",
-					function (response) {
-						if (response && !response.error) {
-							/* handle the result */
-	
-							var feed = response;
-							return feed;
-						}
-					});
+					feed = (function () {
+						FB.api(
+							"/v2.0/me/feed/",
+							function (response) {
+								if (response && !response.error) {
+									return response;
+								}
+							});
+					})();
+					
+					console.log(feed);
+
+					var html = new EJS({url: 'js/fb.ejs'}).render(feed);
+					$(html).appendTo($("div.container"));
 
 				
 			}, {scope: "read_stream"});
@@ -30,8 +34,7 @@
 		};
 
 		if (feed) {
-			var html = new EJS({url: 'js/fb.ejs'}).render(feed);
-							$(html).appendTo($("div.container"));
+			
 		}
 		else {
 			console.log("Try again");
