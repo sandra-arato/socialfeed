@@ -18,6 +18,8 @@
 					if (response && !response.error) {
 						/* handle the result */
 						console.log(response);
+						var html = new EJS({url: '../js/fb.ejs'}).render(response);
+						$(html).appendTo($("div.container"));
 					}
 				});
 			}, {scope: "read_stream"});

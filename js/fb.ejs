@@ -1,0 +1,7 @@
+<% for(var i=1; i<response.data.length; i++) { %>
+	<div class="facebook">
+	<span>Date: <%= response.data[i].created_time %></span>
+	<p><%= response.data[i].message %></p>
+	<h2><%= response.data[i].type %></h2>
+	</div>
+<% } %>
