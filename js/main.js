@@ -17,19 +17,13 @@
 							"/v2.0/me/feed/",
 							function (response) {
 								if (response && !response.error) {
-									alert(response.data[1]);
-									feed = response.data[1];
+									feed = response.data;
 									var html = new EJS({url: 'js/fb.ejs'}).render(feed);
 									$(html).appendTo($("div.container"));
-									return response.data[1];
+									return response.data;
 								}
 							});
 					})();
-					
-					console.log(feed);
-
-					
-
 				
 			}, {scope: "read_stream"});
 			

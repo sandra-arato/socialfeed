@@ -1,7 +1,7 @@
 
-<% for(var i=0; i<2; i++) { %>
+<% for(var i=0; i<6; i++) { %>
 	<div class="facebook">
 	<p><%= i %> Testing</p>
-		<span><%= feed.created_time %></span>
+		<span><%= feed[i].created_time %></span>
 	</div>
 <% } %>
