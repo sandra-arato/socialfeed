@@ -12,18 +12,16 @@
 			FB.login(function(response) {
 				console.log("fb ready");
 
-					feed = (function () {
-						FB.api(
-							"/v2.0/me/feed/",
-							function (response) {
-								if (response && !response.error) {
-									feed = response.data;
-									var html = new EJS({url: 'js/fb.ejs'}).render(feed);
-									$(html).appendTo($("div.container"));
-									return response.data;
-								}
-							});
-					})();
+				FB.api(
+					"/v2.0/me/feed/",
+					function (response) {
+						if (response && !response.error) {
+							feed = response.data;
+							var html = new EJS({url: 'js/fb.ejs'}).render(feed);
+							$(html).appendTo($("div.container"));
+							return response.data;
+						}
+					});
 				
 			}, {scope: "read_stream"});
 			
